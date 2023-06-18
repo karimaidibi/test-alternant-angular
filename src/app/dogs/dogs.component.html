@@ -1,0 +1,13 @@
+<h1>Dogs component</h1>
+
+<app-snackbar [message]="snackbarMessage" [trigger]="showSnackbar"></app-snackbar>
+
+<div class="dogs-container">
+    <div class="dog-item" *ngFor="let dog of dogs">
+        <img [src]="dog.img" alt="{{ dog.name }}">
+        <p>{{ dog.name }}</p>
+        <input [(ngModel)]="dog.name" placeholder="Change name">
+        <button (click)="updateDog(dog)">Update</button>
+        <button (click)="deleteDog(dog)">Delete</button>
+    </div>
+</div>
